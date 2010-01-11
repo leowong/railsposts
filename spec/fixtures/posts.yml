@@ -1,0 +1,13 @@
+one:
+  title: MyString
+  summary: MyText
+  url: MyString
+  published_at: 2010-01-12 06:35:15
+  guid: MyString
+
+two:
+  title: MyString
+  summary: MyText
+  url: MyString
+  published_at: 2010-01-12 06:35:15
+  guid: MyString
