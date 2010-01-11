@@ -1,0 +1,17 @@
+<% title "News Feeds" %>
+
+<table>
+  <tr>
+    <th>Url</th>
+  </tr>
+  <% for news_feed in @news_feeds %>
+    <tr>
+      <td><%=h news_feed.url %></td>
+      <td><%= link_to "Show", news_feed %></td>
+      <td><%= link_to "Edit", edit_news_feed_path(news_feed) %></td>
+      <td><%= link_to "Destroy", news_feed, :confirm => 'Are you sure?', :method => :delete %></td>
+    </tr>
+  <% end %>
+</table>
+
+<p><%= link_to "New News Feed", new_news_feed_path %></p>
