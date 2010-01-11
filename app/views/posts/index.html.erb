@@ -1,25 +1,9 @@
-<% title "Posts" %>
+<% title "Railsposts.com" %>
 
-<table>
-  <tr>
-    <th>Title</th>
-    <th>Summary</th>
-    <th>Url</th>
-    <th>Published At</th>
-    <th>Guid</th>
-  </tr>
-  <% for post in @posts %>
-    <tr>
-      <td><%=h post.title %></td>
-      <td><%=h post.summary %></td>
-      <td><%=h post.url %></td>
-      <td><%=h post.published_at %></td>
-      <td><%=h post.guid %></td>
-      <td><%= link_to "Show", post %></td>
-      <td><%= link_to "Edit", edit_post_path(post) %></td>
-      <td><%= link_to "Destroy", post, :confirm => 'Are you sure?', :method => :delete %></td>
-    </tr>
-  <% end %>
-</table>
-
-<p><%= link_to "New Post", new_post_path %></p>
+<% for post in @posts %>
+  <h2><%= link_to h(post.title), post.url, :target => "_blank" %></h2>
+  <div>
+    <%= strip_tags(post.summary) %>
+  </div>
+  <div style="clear:both"></div>
+<% end %>

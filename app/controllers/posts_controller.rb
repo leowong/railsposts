@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.all
+    @posts = Post.find :all, :order => "published_at DESC", :limit => 100
   end
   
   def show
