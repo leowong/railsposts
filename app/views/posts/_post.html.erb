@@ -12,7 +12,7 @@
     </span>
     <span class="source">
       <%# FIXME it's a fake source! %>
-      <%= link_to "railscasts", "http://railscasts.com", :target => "_blank" %>
+      <%= link_to post.source || "unknown", "#", :target => "_blank" %>
     </span>
   </div>
   <div class="summary" style="display:none">

@@ -110,7 +110,7 @@ h1 {
     list-style-position: outside;
     list-style-type: none;
     margin: 0;
-    padding: 0 10px 0 25px;
+    padding: 0 12px 0 25px;
 }
 
 #navbar ul li.current {
