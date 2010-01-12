@@ -1,0 +1,23 @@
+<div class="post clearfix">
+  <div class="clearfix">
+    <span class="datetime">
+      <%- if post_counter % 10 == 0 -%>
+        <%= time_ago_in_words(post.published_at) %> ago
+      <%- else -%>
+        &nbsp;
+      <%- end -%>
+    </span>
+    <span class="title">
+      <%= link_to h(post.title), post.url, :target => "_blank" %>
+    </span>
+    <span class="source">
+      <%# FIXME it's a fake source! %>
+      <%= link_to "railscasts", "http://railscasts.com", :target => "_blank" %>
+    </span>
+  </div>
+  <div class="summary" style="display:none">
+  </div>
+</div>
+<%- if post_counter % 10 == 9 -%>
+  <hr class="space" />
+<%- end -%>

@@ -1,81 +1,196 @@
-body {
-  background-color: #4B7399;
-  font-family: Verdana, Helvetica, Arial;
-  font-size: 14px;
+/* hr */
+
+hr {
+    background: #999999;
+    height: 1px;
 }
+
+/* links */
 
 a img {
-  border: none;
+    border: none;
 }
 
-a {
-  color: #0000FF;
+a:link {
+    color: #00f;
+    text-decoration: none;
 }
 
-.clear {
-  clear: both;
-  height: 0;
-  overflow: hidden;
+a:visited {
+    color: #00a;
+    text-decoration: none;
 }
 
-#container {
-  width: 75%;
-  margin: 0 auto;
-  background-color: #FFF;
-  padding: 20px 40px;
-  border: solid 1px black;
-  margin-top: 20px;
+a:hover {
+    color: #f60;
+    text-decoration: underline;
 }
+
+a:active {
+    color: #f60;
+    text-decoration: underline;
+}
+
+/* wrapper */
+
+#wrapper {
+    margin: 0 auto;
+    width: 910px;
+    color: #000000;
+    font-family: 'Lucida Grande',Geneva,Verdana,Arial,Helvetica,sans-serif;
+    font-size: 12px;
+}
+
+/* header */
+
+#header {
+    padding: 35px 50px 15px 130px;
+    margin: 0 30px 0 30px;
+    border-bottom: 1px solid #999999; /* #A1A5A9 */
+}
+
+#header h1, #header #tagline {
+    display: none;
+}
+
+h1 {
+    /* margin: 25px 0 20px 160px; */
+    margin: 0;
+}
+
+/* content */
+
+#content {
+    padding-top: 20px;
+}
+
+#content #posts .post .datetime {
+    color: #333333;
+    /* color: #DBDBDB; */
+    float: left;
+    width: 140px;
+    overflow: hidden;
+    white-space: nowrap;
+    padding-right: 20px;
+    text-align: right;
+}
+
+#content #posts .post .title {
+    float: left;
+    width: 460px;
+    overflow: hidden;
+    white-space: nowrap;
+    position: relative;
+}
+
+#content #posts .post .source {
+    font-size: 10px;
+    float: left;
+    width: 90px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-align: right;
+}
+
+#content #posts .post .source a {
+    color: #777777;
+    padding-right: 5px;
+}
+
+/* navigation bar */
+
+#navbar {
+    margin: 15px 0 0 20px;
+    padding: 5px 0 10px;
+    border-left: 1px solid #999999;
+}
+
+#navbar ul {
+    list-style-image: none;
+    list-style-position: outside;
+    list-style-type: none;
+    margin: 0;
+    padding: 0 10px 0 25px;
+}
+
+#navbar ul li.current {
+    background-color: #E0E0E0;
+}
+
+#navbar ul li a {
+    padding: 2px 10px;
+}
+
+#navbar ul li.current a {
+    color: #222;
+}
+
+/* footer */
+
+#footer {
+    font-size: 10px;
+    padding: 10px 50px 25px 130px;
+    margin: 15px 30px 0 30px;
+    border-top: 1px solid #999999;
+    text-align: right;
+}
+
+#footer .tools {
+    position: relative;
+    right: -50px;
+}
+
+/* flash messages */
 
 #flash_notice, #flash_error {
-  padding: 5px 8px;
-  margin: 10px 0;
+    padding: 5px 8px;
+    margin: 10px 0;
 }
 
 #flash_notice {
-  background-color: #CFC;
-  border: solid 1px #6C6;
+    background-color: #CFC;
+    border: solid 1px #6C6;
 }
 
 #flash_error {
-  background-color: #FCC;
-  border: solid 1px #C66;
+    background-color: #FCC;
+    border: solid 1px #C66;
 }
 
 .fieldWithErrors {
-  display: inline;
+    display: inline;
 }
 
 #errorExplanation {
-  width: 400px;
-  border: 2px solid #CF0000;
-  padding: 0px;
-  padding-bottom: 12px;
-  margin-bottom: 20px;
-  background-color: #f0f0f0;
+    width: 400px;
+    border: 2px solid #CF0000;
+    padding: 0px;
+    padding-bottom: 12px;
+    margin-bottom: 20px;
+    background-color: #f0f0f0;
 }
 
 #errorExplanation h2 {
-  text-align: left;
-  font-weight: bold;
-  padding: 5px 5px 5px 15px;
-  font-size: 12px;
-  margin: 0;
-  background-color: #c00;
-  color: #fff;
+    text-align: left;
+    font-weight: bold;
+    padding: 5px 5px 5px 15px;
+    font-size: 12px;
+    margin: 0;
+    background-color: #c00;
+    color: #fff;
 }
 
 #errorExplanation p {
-  color: #333;
-  margin-bottom: 0;
-  padding: 8px;
+    color: #333;
+    margin-bottom: 0;
+    padding: 8px;
 }
 
 #errorExplanation ul {
-  margin: 2px 24px;
+    margin: 2px 24px;
 }
 
 #errorExplanation ul li {
-  font-size: 12px;
-  list-style: disc;
+    font-size: 12px;
+    list-style: disc;
 }

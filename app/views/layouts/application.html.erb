@@ -1,22 +1,51 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title><%= h(yield(:title) || "Untitled") %></title>
+    <title>Railsposts - <%= h(yield(:title) || "Untitled") %></title>
+    <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
+    <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
+    <!--[if lt IE 8]>
+      <link rel="stylesheet" href="/stylesheets/blueprint/ie.css" type="text/css" media="screen, projection" />
+    <![endif]-->
     <%= stylesheet_link_tag 'application' %>
     <%= yield(:head) %>
   </head>
   <body>
-    <div id="container">
-      <%- flash.each do |name, msg| -%>
-        <%= content_tag :div, msg, :id => "flash_#{name}" %>
-      <%- end -%>
-      
-      <%- if show_title? -%>
-        <h1><%=h yield(:title) %></h1>
-      <%- end -%>
-      
-      <%= yield %>
-    </div>
+    <div id="wrapper">
+      <div class="container !showgrid">
+
+	<div id="header" class="clearfix">
+	  <div id="logo">
+	    <h1><%= link_to "Railsposts", root_url %></h1>
+	    <%= link_to image_tag("railsposts.png", :alt => "railsposts"), root_url %>
+	  </div>
+	  <!-- <div id="tagline">...</div> -->
+	</div>
+
+	<div id="columns" class="clearfix">
+	  <div id="content" class="span-18">
+	    <%- flash.each do |name, msg| -%>
+              <%= content_tag :div, msg, :id => "flash_#{name}" %>
+	    <%- end -%>
+
+	    <!-- <%- if show_title? -%> -->
+            <!--   <h2><%#h yield(:title) %></h1> -->
+	    <!-- <%- end -%> -->
+
+	    <%= yield %>
+	  </div>
+	  <div id="navbar" class="span-5 last">
+	    <%= yield(:navbar) || render(:partial => 'shared/navbar') %>
+	  </div>
+	</div> <!-- columns -->
+
+	<div id="footer">
+	  <div class="tools">
+	    [ <%= link_to "Contact", "#" %> ]
+	  </div>
+	</div>
+      </div> <!-- container -->
+    </div> <!-- wrapper -->
   </body>
 </html>

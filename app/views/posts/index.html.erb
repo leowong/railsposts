@@ -1,9 +1,5 @@
-<% title "Railsposts.com" %>
+<% title "Posts" %>
 
-<% for post in @posts %>
-  <h2><%= link_to h(post.title), post.url, :target => "_blank" %></h2>
-  <div>
-    <%= strip_tags(post.summary) %>
-  </div>
-  <div style="clear:both"></div>
-<% end %>
+<div id="posts" class="clearfix">
+  <%= render :partial => @posts %>
+</div>
