@@ -1,5 +1,6 @@
  [X] displaying source names
  [X] adding pagination
+ [X] adding 'more' button
 
- [ ] adding 'more' button
+ [ ] click to show summaries
  [ ] testing with rspec

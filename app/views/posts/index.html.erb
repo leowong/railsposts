@@ -1,7 +1,17 @@
 <% title "Posts" %>
+<% javascript :defaults %>
 
 <div id="posts" class="clearfix">
   <%= render :partial => @posts %>
 </div>
 
-<%= will_paginate @posts %>
+<div id="pagination" class="pagination clearfix">
+  <% if @posts.current_page < @posts.total_pages %>
+    <%= render :partial => "more", :locals => { :page => @posts.current_page + 1 } %>
+  <% else %>
+    <hr class="space" />
+    <div>
+      End
+    </div>
+  <% end %>
+</div>

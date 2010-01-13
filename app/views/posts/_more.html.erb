@@ -1,0 +1,15 @@
+<div id="page-<%=page%>">
+  <span>
+    <%= link_to_remote 'more »',
+	{
+          :url => { :page => page },
+          :loading => "Element.show('loading-page-#{page}')",
+          :method => :get
+        },
+        :href => url_for(:page => page)
+    %>
+  </span>
+  <span id="<%= "loading-page-#{page}" %>" class="loading" style="display:none"%>
+    <%= image_tag "loading.gif" %>
+  </span>
+</div>

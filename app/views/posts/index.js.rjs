@@ -1,0 +1,10 @@
+page.insert_html :bottom, :posts, :partial => @posts
+page.replace_html :pagination, :partial => "more", :locals => { :page => @posts.current_page + 1 }
+if @posts.total_pages <= @posts.current_page
+  page.replace_html :pagination, <<'END'
+    <hr class="space" />
+    <div>
+      End
+    </div>
+END
+end

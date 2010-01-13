@@ -8,6 +8,9 @@
       <%- end -%>
     </span>
     <span class="title">
+      <span class="loading" style="display:none">
+	<%= image_tag "loading.gif" %>
+      </span>
       <%= link_to h(post.title), post.url, :target => "_blank" %>
     </span>
     <span class="source">

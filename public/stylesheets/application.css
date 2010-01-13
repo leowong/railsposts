@@ -1,4 +1,6 @@
-/* hr */
+/**
+ *  railsposts.com
+ */
 
 hr {
     background: #999999;
@@ -78,9 +80,20 @@ h1 {
 #content #posts .post .title {
     float: left;
     width: 460px;
-    overflow: hidden;
-    white-space: nowrap;
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
     position: relative;
+}
+
+#content #posts .post .title .loading {
+    position: absolute;
+    left: -14px;
+}
+
+#content #posts .post .title .loading img {
+    vertical-align: text-bottom;
+    position: relative;
+    bottom: 1px;
 }
 
 #content #posts .post .source {
@@ -128,8 +141,22 @@ h1 {
 /* pagination */
 
 .pagination {
-    margin-left: 30px;
+    color: #777777;
+    margin-left: 32px;
+    position: relative;
 }
+
+.pagination .loading {
+    position: absolute;
+    left: 114px;
+}
+
+.pagination .loading img {
+    vertical-align: text-bottom;
+    position: relative;
+    bottom: 1px;
+}
+
 
 /* footer */
 
