@@ -1,2 +1,5 @@
- [ ] displaying source names
+ [X] displaying source names
+ [X] adding pagination
+
+ [ ] adding 'more' button
  [ ] testing with rspec

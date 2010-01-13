@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.find :all, :order => "published_at DESC", :limit => 100
+    @posts = Post.paginate :page => params[:page], :order => "published_at DESC"
   end
   
   def show
