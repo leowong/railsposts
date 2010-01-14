@@ -1,12 +1,16 @@
 <div id="page-<%=page%>">
   <span>
+    <%# OPTIMIZE refactor the ugly code -%>
+    <%- parameters = { :page => page } -%>
+    <%- parameters.merge!({ :source => params[:source] }) if params[:source] -%>
+
     <%= link_to_remote 'more »',
 	{
-          :url => { :page => page },
+          :url => parameters,
           :loading => "Element.show('loading-page-#{page}')",
           :method => :get
         },
-        :href => url_for(:page => page)
+        :href => url_for(parameters)
     %>
   </span>
   <span id="<%= "loading-page-#{page}" %>" class="loading" style="display:none"%>

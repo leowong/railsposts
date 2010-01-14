@@ -5,6 +5,14 @@
 #   
 #   cities = City.create([{ :name => 'Chicago' }, { :name => 'Copenhagen' }])
 #   Major.create(:name => 'Daley', :city => cities.first)
-NewsFeed.create([{ :url => "http://feeds.feedburner.com/railscasts", :source => "railscasts" },
-                 { :url => "http://feeds.feedburner.com/RailsInside", :source => "railsinside" },
-                 { :url => "http://feeds.feedburner.com/railstips", :source => "railstips" }])
+NewsFeed.create([
+  { :source   => "railscasts",
+    :homepage => "http://railscasts.com/",
+    :url      => "http://feeds.feedburner.com/railscasts" },
+  { :source   => "railsinside",
+    :homepage => "http://www.railsinside.com/",
+    :url      => "http://feeds.feedburner.com/RailsInside" },
+  { :source   => "railstips",
+    :homepage => "http://railstips.org/",
+    :url      => "http://feeds.feedburner.com/railstips" }
+])

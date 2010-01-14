@@ -3,11 +3,13 @@
 <table>
   <tr>
     <th>Source</th>
+    <th>Homepage</th>
     <th>Url</th>
   </tr>
   <% for news_feed in @news_feeds %>
     <tr>
       <td><%=h news_feed.source %></td>
+      <td><%=h news_feed.homepage %></td>
       <td><%=h news_feed.url %></td>
       <td><%= link_to "Show", news_feed %></td>
       <td><%= link_to "Edit", edit_news_feed_path(news_feed) %></td>

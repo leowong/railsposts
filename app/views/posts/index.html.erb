@@ -1,5 +1,7 @@
-<% title "Posts" %>
-<% javascript :defaults %>
+<%- if @posts[0] && params[:source] -%>
+  <%- title "Recent posts from " + link_to(params[:source], @posts[0].news_feed.homepage, :target => "_blank")  -%>
+<%- end -%>
+<%- javascript :defaults -%>
 
 <div id="posts" class="clearfix">
   <%= render :partial => @posts %>
@@ -11,7 +13,7 @@
   <% else %>
     <hr class="space" />
     <div>
-      End
+      End of messages
     </div>
   <% end %>
 </div>

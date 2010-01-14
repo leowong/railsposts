@@ -1,28 +1,30 @@
 class NewsFeed < ActiveRecord::Base
-  validates_presence_of :url, :source
+  has_many :posts
 
-  attr_accessible :url, :source
+  validates_presence_of :url, :homepage, :source
+
+  attr_accessible :url, :homepage, :source
 
   def self.update
     feeds.each do |feed|
-      update_from_feed(feed.url.strip, feed.source.strip)
+      update_from_feed(feed.url.strip, feed.id)
     end
   end
 
 private
 
   def self.feeds
-    feeds = all(:select => "url, source")
+    feeds = all
   end
 
-  def self.update_from_feed(feed_url, feed_source)
+  def self.update_from_feed(feed_url, feed_id)
     feed = Feedzirra::Feed.fetch_and_parse(feed_url)
     unless feed == 0
-      add_entries(feed.entries, feed_source)
+      add_entries(feed.entries, feed_id)
     end
   end
   
-  def self.add_entries(entries, feed_source)
+  def self.add_entries(entries, feed_id)
     entries.each do |entry|
       unless Post.exists? :guid => entry.id
         Post.create!(
@@ -31,7 +33,7 @@ private
           :url          => entry.url,
           :published_at => entry.published,
           :guid         => entry.id,
-          :source       => feed_source
+          :news_feed_id => feed_id
         )
       end
     end

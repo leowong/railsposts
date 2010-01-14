@@ -4,7 +4,7 @@ if @posts.total_pages <= @posts.current_page
   page.replace_html :pagination, <<'END'
     <hr class="space" />
     <div>
-      End
+      End of messages
     </div>
 END
 end

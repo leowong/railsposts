@@ -2,7 +2,7 @@
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title>Railsposts - <%= h(yield(:title) || "Untitled") %></title>
+    <title>Railsposts - <%= h(strip_tags(yield(:title)) || "Rails blog posts gathering") %></title>
     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
     <!--[if lt IE 8]>
@@ -14,7 +14,6 @@
   <body>
     <div id="wrapper">
       <div class="container">
-
 	<div id="header" class="clearfix">
 	  <div id="logo">
 	    <h1><%= link_to "Railsposts", root_url %></h1>
@@ -29,9 +28,11 @@
               <%= content_tag :div, msg, :id => "flash_#{name}" %>
 	    <%- end -%>
 
-	    <!-- <%- if show_title? -%> -->
-            <!--   <h2><%#h yield(:title) %></h2> -->
-	    <!-- <%- end -%> -->
+	    <%- if show_title? -%>
+	      <div id="content-title">
+	        <%= yield(:title) %>:
+	      </div>
+	    <%- end -%>
 
 	    <%= yield %>
 	  </div>

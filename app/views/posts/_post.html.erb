@@ -1,7 +1,9 @@
 <div class="post clearfix">
   <div class="clearfix">
     <span class="datetime">
-      <%- if post_counter % 10 == 0 -%>
+      <%- if params[:source] -%>
+        <span class="result"><%= friendly_datetime post.published_at %></span>
+      <%- elsif post_counter % 10 == 0 -%>
         <%= time_ago_in_words(post.published_at) %> ago
       <%- else -%>
         &nbsp;
@@ -14,8 +16,7 @@
       <%= link_to h(post.title), post.url, :target => "_blank" %>
     </span>
     <span class="source">
-      <%# FIXME it's a fake source! %>
-      <%= link_to post.source || "unknown", "#", :target => "_blank" %>
+      <%= link_to post.source || "unknown", :source => post.source %>
     </span>
   </div>
   <div class="summary" style="display:none">

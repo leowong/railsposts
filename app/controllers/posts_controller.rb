@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.paginate :page => params[:page], :order => "published_at DESC"
+    @posts = Post.search(params[:source], params[:page])
   end
   
   def show

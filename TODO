@@ -1,6 +1,8 @@
  [X] displaying source names
  [X] adding pagination
  [X] adding 'more' button
+ [X] searching posts from perticular source
 
- [ ] click to show summaries
+ [ ] showing summaries
+ [ ] authentication
  [ ] testing with rspec
