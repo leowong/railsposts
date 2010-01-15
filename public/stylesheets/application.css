@@ -51,21 +51,21 @@ a:active {
     border-bottom: 1px solid #999999; /* #A1A5A9 */
 }
 
-#header h1, #header #tagline {
+#header h1 {
     display: none;
 }
 
-h1 {
-    /* margin: 25px 0 20px 160px; */
-    margin: 0;
+#logo {
+    float: left;
 }
 
-/* title */
-
-#content-title {
-    color: #555555;
+#tagline {
+    ddisplay: none;
+    float: left;
+    /* color: #777777; */
     /* font-weight: bold; */
-    margin: 0 0 15px 25px;
+    font-style: italic;
+    margin: 12px 0 0 20px;
 }
 
 /* content */
@@ -153,7 +153,7 @@ h1 {
 /* pagination */
 
 .pagination {
-    color: #777777;
+    color: #555555;
     margin-left: 22px;
     position: relative;
 }

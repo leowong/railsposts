@@ -2,7 +2,7 @@
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title>Railsposts - <%= h(strip_tags(yield(:title)) || "Rails blog posts gathering") %></title>
+    <title>Railsposts.com - <%=h strip_tags(yield(:title)) || "High quality Rails blogs collection" %></title>
     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
     <!--[if lt IE 8]>
@@ -17,21 +17,17 @@
 	<div id="header" class="clearfix">
 	  <div id="logo">
 	    <h1><%= link_to "Railsposts", root_url %></h1>
-	    <%= link_to image_tag("railsposts.png", :alt => "railsposts"), root_url %>
+	    <div id="logo"><%= link_to image_tag("railsposts.png", :alt => "railsposts"), root_url %></div>
 	  </div>
-	  <!-- <div id="tagline">...</div> -->
+	  <div id="tagline">
+	    <%= yield(:title) || "high quality Rails blogs collection" %>
+	  </div>
 	</div>
 
 	<div id="columns" class="clearfix">
 	  <div id="content" class="span-18">
 	    <%- flash.each do |name, msg| -%>
               <%= content_tag :div, msg, :id => "flash_#{name}" %>
-	    <%- end -%>
-
-	    <%- if show_title? -%>
-	      <div id="content-title">
-	        <%= yield(:title) %>:
-	      </div>
 	    <%- end -%>
 
 	    <%= yield %>
