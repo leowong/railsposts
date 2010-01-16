@@ -30,6 +30,7 @@ private
         Post.create!(
           :title        => entry.title,
           :summary      => entry.summary,
+          :content      => entry.content,
           :url          => entry.url,
           :published_at => entry.published,
           :guid         => entry.id,

@@ -9,10 +9,6 @@ hr {
 
 /* links */
 
-a img {
-    border: none;
-}
-
 a:link {
     color: #00f;
     text-decoration: none;
@@ -76,7 +72,6 @@ a:active {
 
 #content #posts .post .datetime {
     color: #333333;
-    /* color: #DBDBDB; */
     float: left;
     width: 140px;
     overflow: hidden;
@@ -89,28 +84,26 @@ a:active {
     color: #777777;
 }
 
-#content #posts .post .title {
+#content #posts .post .main {
     float: left;
     width: 460px;
-    /* overflow: hidden; */
-    /* white-space: nowrap; */
     position: relative;
 }
 
-#content #posts .post .title .loading {
+#content #posts .post .main .loading {
     position: absolute;
     left: -14px;
 }
 
-#content #posts .post .title .loading img {
+#content #posts .post .main .loading img {
     vertical-align: text-bottom;
     position: relative;
     bottom: 1px;
 }
 
 #content #posts .post .source {
-    font-size: 10px;
     float: left;
+    font-size: 10px;
     width: 90px;
     overflow: hidden;
     white-space: nowrap;
@@ -120,6 +113,27 @@ a:active {
 #content #posts .post .source a {
     color: #777777;
     padding-right: 5px;
+}
+
+#content #posts .post .summary {
+    background-color: #F6F6F6;
+    padding: 10px 10px 10px 10px;
+    margin: 10px 5px 10px 160px;
+    border: 1px dashed #CCCCCC;
+    max-height: 200px;
+    overflow: auto;
+}
+
+#content #posts .post .summary p {
+    margin: 0;
+}
+
+#content #posts .post .summary h1,
+#content #posts .post .summary h2,
+#content #posts .post .summary h3,
+#content #posts .post .summary h4 {
+    font-size: 12px;
+    font-weight: bold;
 }
 
 /* navigation bar */

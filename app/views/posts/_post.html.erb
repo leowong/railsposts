@@ -9,18 +9,34 @@
         &nbsp;
       <%- end -%>
     </span>
-    <span class="title">
-      <span class="loading" style="display:none">
+
+    <span class="main">
+      <span id="loading-<%= post.id %>" class="loading" style="display:none">
 	<%= image_tag "loading.gif" %>
       </span>
-      <%= link_to h(post.title), post.url, :target => "_blank" %>
+      
+      <span id="title-<%= post.id %>" class="title">
+	<%= link_to_remote h(post.title),
+	                   {
+	                     :url => { :controller => :posts, :action => :show, :id => post },
+	                     :loading => "Element.show('loading-#{post.id}')",
+	                     :method => :get
+	                   },
+	                   :href => url_for(:controller => :posts, :action => :show, :id => post.id),
+	                   :target => "_blank"
+	%>
+      </span>
     </span>
+
     <span class="source">
       <%= link_to post.source || "unknown", :source => post.source %>
     </span>
+
   </div>
-  <div class="summary" style="display:none">
+
+  <div id="summary-<%= post.id %>" class="summary clearfix" style="display:none">
   </div>
+
 </div>
 <%- if post_counter % 10 == 9 -%>
   <hr class="space" />

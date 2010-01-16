@@ -14,5 +14,11 @@ NewsFeed.create([
     :url      => "http://feeds.feedburner.com/RailsInside" },
   { :source   => "railstips",
     :homepage => "http://railstips.org/",
-    :url      => "http://feeds.feedburner.com/railstips" }
+    :url      => "http://feeds.feedburner.com/railstips" },
+  { :source   => "ridingrails",
+    :homepage => "http://weblog.rubyonrails.org/",
+    :url      => "http://feeds.feedburner.com/RidingRails" },
+  { :source   => "buckblog",
+    :homepage => "http://weblog.jamisbuck.org/",
+    :url      => "http://feeds.feedburner.com/buckblog" }
 ])

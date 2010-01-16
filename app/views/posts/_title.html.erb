@@ -1,0 +1,9 @@
+<%= link_to_function h(post.title) do |page|
+      page.select('.summary').each do |value|
+          value.hide
+      end
+      page["summary-#{@post.id}"].show :queue => "end"
+    end
+%>
+
+<%= link_to "»", post.url, :target => "_blank" %>

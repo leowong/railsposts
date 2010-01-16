@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   belongs_to :news_feed
 
-  attr_accessible :title, :summary, :url, :published_at, :guid, :source, :news_feed_id
+  attr_accessible :title, :summary, :content, :url, :published_at, :guid, :source, :news_feed_id
   cattr_reader :per_page
   @@per_page = 50
 

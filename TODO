@@ -2,7 +2,8 @@
  [X] adding pagination
  [X] adding 'more' button
  [X] searching posts from perticular source
+ [X] showing summaries
 
- [ ] showing summaries
+ [ ] hot page (sorting by weight)
  [ ] authentication
  [ ] testing with rspec
