@@ -2,7 +2,7 @@
 	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html>
   <head>
-    <title>Railsposts.com - <%=h strip_tags(yield(:title)) || "High quality Rails blogs collection" %></title>
+    <title>Railsposts.com - <%=h strip_tags(yield(:title)) || "High quality blogs collection for Rails developers" %></title>
     <link rel="stylesheet" href="/stylesheets/blueprint/screen.css" type="text/css" media="screen, projection" />
     <link rel="stylesheet" href="/stylesheets/blueprint/print.css" type="text/css" media="print" />
     <!--[if lt IE 8]>
@@ -20,7 +20,7 @@
 	    <div id="logo"><%= link_to image_tag("railsposts.png", :alt => "railsposts"), root_url %></div>
 	  </div>
 	  <div id="tagline">
-	    <%= yield(:title) || "high quality Rails blogs collection" %>
+	    <%= yield(:title) || "high quality blogs collection for Rails developers" %>
 	  </div>
 	</div>
 

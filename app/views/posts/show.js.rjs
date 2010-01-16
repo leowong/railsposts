@@ -1,6 +1,25 @@
+# OPTIMIZE refactor the rjs code
+
 page["loading-#{@post.id.to_s}"].hide
+
 page.replace_html "title-#{@post.id}", :partial => "title", :locals => { :post => @post }
 page.replace_html "summary-#{@post.id}", :partial => "summary", :locals => { :post => @post }
+
+page.select('.arrow').each do |value|
+  value.hide
+end
+page["arrow-#{@post.id.to_s}"].show
+
+page.select('.title').each do |value|
+  value.set_attribute(:class, "title")
+end
+page["title-#{@post.id}"].set_attribute(:class, "title current")
+
+page.select('.source').each do |value|
+  value.set_attribute(:class, "source")
+end
+page["source-#{@post.id}"].set_attribute(:class, "source current")
+
 page.select('.summary').each do |value|
   value.hide
 end

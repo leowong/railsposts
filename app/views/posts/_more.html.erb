@@ -4,7 +4,7 @@
     <%- parameters = { :page => page } -%>
     <%- parameters.merge!({ :source => params[:source] }) if params[:source] -%>
 
-    <%= link_to_remote 'more »',
+    <%= link_to_remote 'more',
 	{
           :url => parameters,
           :loading => "Element.show('loading-page-#{page}')",
