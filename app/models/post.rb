@@ -6,7 +6,7 @@ class Post < ActiveRecord::Base
 
   named_scope :hot,
               :joins => :news_feed,
-              :select => "posts.*, news_feeds.source as source", :conditions => ['weight > ?', 0],
+              :select => "posts.*, news_feeds.source as source", :conditions => ['weight >= ?', 0],
               :order => "weight DESC"
 
   def self.search(search, page)
