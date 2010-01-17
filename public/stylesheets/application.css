@@ -105,6 +105,12 @@ a:active {
     color: #f60;
 }
 
+#content #posts .post .points {
+    color: #777;
+    font-size: xx-small;
+    vertical-align: text-bottom;
+}
+
 #content #posts .post .source {
     float: left;
     font-size: 10px;
@@ -192,6 +198,9 @@ a:active {
     bottom: 1px;
 }
 
+.pagination .end {
+    font-size: smaller;
+}
 
 /* footer */
 

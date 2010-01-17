@@ -1,8 +1,12 @@
 class PostsController < ApplicationController
   def index
-    @posts = Post.search(params[:source], params[:page])
+    @posts = Post.search params[:source], params[:page]
   end
   
+  def hot
+    @posts = Post.hot.paginate :page => params[:page]
+  end
+
   def show
     @post = Post.find(params[:id])
   end

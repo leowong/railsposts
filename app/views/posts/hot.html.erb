@@ -1,6 +1,4 @@
-<%- if @posts[0] && params[:source] -%>
-  <%- title "posts from " + link_to(params[:source], @posts[0].news_feed.homepage, :target => "_blank")  -%>
-<%- end -%>
+<%- title "popular posts" -%>
 <%- javascript :defaults -%>
 
 <div id="posts" class="clearfix">
@@ -12,7 +10,7 @@
     <%= render :partial => "more", :locals => { :page => @posts.current_page + 1 } %>
   <% else %>
     <hr class="space" />
-    <div class="end">
+    <div>
       End of messages
     </div>
   <% end %>

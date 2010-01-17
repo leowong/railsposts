@@ -3,7 +3,7 @@ page.replace_html :pagination, :partial => "more", :locals => { :page => @posts.
 if @posts.total_pages <= @posts.current_page
   page.replace_html :pagination, <<'END'
     <hr class="space" />
-    <div>
+    <div class="end">
       End of messages
     </div>
 END

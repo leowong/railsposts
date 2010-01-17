@@ -1,4 +1,5 @@
 ActionController::Routing::Routes.draw do |map|
+  map.hot "hot", :controller => 'posts', :action => 'hot'
   map.resources :posts
 
   map.resources :news_feeds

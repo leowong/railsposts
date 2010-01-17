@@ -9,7 +9,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20100116225439) do
+ActiveRecord::Schema.define(:version => 20100117110636) do
 
   create_table "news_feeds", :force => true do |t|
     t.string   "url"
@@ -27,9 +27,10 @@ ActiveRecord::Schema.define(:version => 20100116225439) do
     t.string   "guid"
     t.datetime "created_at"
     t.datetime "updated_at"
-    t.integer  "news_feed_id", :default => 0, :null => false
+    t.integer  "news_feed_id", :default => 0,   :null => false
     t.text     "content"
-    t.integer  "points",       :default => 0, :null => false
+    t.integer  "points",       :default => 0,   :null => false
+    t.float    "weight",       :default => 0.0, :null => false
   end
 
 end

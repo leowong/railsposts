@@ -1,7 +1,7 @@
 <div class="post clearfix">
   <div class="clearfix">
     <span class="datetime">
-      <%- if params[:source] -%>
+      <%- if params[:source] or controller.action_name == 'hot' -%>
         <span class="result"><%= friendly_datetime post.published_at %></span>
       <%- elsif post_counter % 10 == 0 -%>
         <%= time_ago_in_words(post.published_at) %> ago
@@ -25,6 +25,11 @@
 	                   :target => "_blank"
 	%>
       </span>
+      <%- if post.points > 0 -%>
+        <span class="points">
+          (<%= post.points %>)
+	</span>
+      <%- end -%>
       <span id="arrow-<%= post.id %>" class="arrow" style="display:none">
 	<%= link_to image_tag("arrow.png"),
 	    post.url,
@@ -35,7 +40,7 @@
     </span>
 
     <span id="source-<%= post.id %>" class="source">
-      <%= link_to post.source || "unknown", :source => post.source %>
+      <%= link_to post.source || "unknown", :action => :index, :source => post.source %>
     </span>
 
   </div>
