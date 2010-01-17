@@ -125,6 +125,7 @@ a:active {
 }
 
 #content #posts .post .summary {
+    font-size: 12px;
     background-color: #F6F6F6;
     padding: 10px 10px 10px 10px;
     margin: 10px 5px 10px 160px;
@@ -133,15 +134,14 @@ a:active {
     overflow: auto;
 }
 
-#content #posts .post .summary p {
-    margin: 0;
+#content #posts .post .summary * {
+    font-size: 12px;
 }
 
 #content #posts .post .summary h1,
 #content #posts .post .summary h2,
 #content #posts .post .summary h3,
 #content #posts .post .summary h4 {
-    font-size: 12px;
     font-weight: bold;
 }
 

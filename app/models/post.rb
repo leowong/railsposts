@@ -13,4 +13,8 @@ class Post < ActiveRecord::Base
              :conditions => conditions,
              :order => "published_at DESC"
   end
+
+  def increase_points_by_one
+    self.update_attribute(:points, points.to_i + 1)
+  end
 end

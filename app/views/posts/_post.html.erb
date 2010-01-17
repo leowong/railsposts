@@ -26,7 +26,11 @@
 	%>
       </span>
       <span id="arrow-<%= post.id %>" class="arrow" style="display:none">
-	<%= link_to image_tag("arrow.png"), post.url, :target => "_blank" %>
+	<%= link_to image_tag("arrow.png"),
+	    post.url,
+	    :onclick => "window.open('#{post.url}'); new Ajax.Request('/posts/hit/#{post.id}', {asynchronous:true, evalScripts:false, method:'post', parameters:'authenticity_token=' + encodeURIComponent('#{form_authenticity_token}')}); return false;",
+	    :target => "_blank"
+	%>
       </span>
     </span>
 

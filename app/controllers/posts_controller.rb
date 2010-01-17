@@ -41,4 +41,10 @@ class PostsController < ApplicationController
     flash[:notice] = "Successfully destroyed post."
     redirect_to posts_url
   end
+
+  def hit
+    @post = Post.find(params[:id])
+    @post.increase_points_by_one
+    head :ok
+  end
 end

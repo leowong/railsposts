@@ -20,5 +20,8 @@ NewsFeed.create([
     :url      => "http://feeds.feedburner.com/RidingRails" },
   { :source   => "buckblog",
     :homepage => "http://weblog.jamisbuck.org/",
-    :url      => "http://feeds.feedburner.com/buckblog" }
+    :url      => "http://feeds.feedburner.com/buckblog" },
+  { :source   => "nubyonrails",
+    :homepage => "http://nubyonrails.com/",
+    :url      => "http://feeds.feedburner.com/nubyonrails" }
 ])
