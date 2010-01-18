@@ -10,8 +10,6 @@ module ApplicationHelper
     end
   end
 
-private
-
   def published_today?(datetime)
     datetime.to_date == Time.zone.now.to_date
   end

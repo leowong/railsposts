@@ -39,7 +39,7 @@
 
 	<div id="footer">
 	  <div class="tools">
-    	    <%= link_to "Feeds", "/todo.html" %> |
+    	    <%= link_to "Feeds", feeds_path %> |
 	    <%= mail_to "info@railsposts.com", "Contact", :encode => "javascript" %>
 	    <%- if admin? -%>
 	      | <%= link_to "Logout", logout_path %>

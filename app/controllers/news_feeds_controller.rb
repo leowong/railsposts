@@ -2,7 +2,7 @@ class NewsFeedsController < ApplicationController
   before_filter :authorize, :except => [:index, :new, :create]
 
   def index
-    @news_feeds = NewsFeed.all
+    @news_feeds = NewsFeed.all :order => "source"
   end
   
   def show

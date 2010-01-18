@@ -2,7 +2,7 @@
   <li class="<%= "current" if current_page? root_url %>">
     <%= link_to "Recent", root_url %>
   </li>
-  <li class="<%= "current" if current_page? :action => 'hot' %>">
-    <%= link_to "Popular", :action => :hot %>
+  <li class="<%= "current" if current_page? :controller=> :posts, :action => :hot %>">
+    <%= link_to "Popular", :controller => :posts, :action => :hot %>
   </li>
 </ul>

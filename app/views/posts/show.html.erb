@@ -1,29 +1,30 @@
-<% title "Post" %>
+<% title link_to @post.title, @post.url, :target => "_blank" %>
 
-<p>
-  <strong>Title:</strong>
-  <%=h @post.title %>
-</p>
-<p>
-  <strong>Summary:</strong>
-  <%=h @post.summary %>
-</p>
-<p>
-  <strong>Url:</strong>
-  <%=h @post.url %>
-</p>
-<p>
-  <strong>Published At:</strong>
-  <%=h @post.published_at %>
-</p>
-<p>
-  <strong>Guid:</strong>
-  <%=h @post.guid %>
-</p>
-<%- if admin? -%>
+<div id="page">
   <p>
-    <%= link_to "Edit", edit_post_path(@post) %> |
-    <%= link_to "Destroy", @post, :confirm => 'Are you sure?', :method => :delete %> |
-    <%= link_to "View All", posts_path %>
+    <strong>
+      From <%= link_to @post.news_feed.source, @post.news_feed.homepage, :target => "_blank" %>, published
+      <%- if published_today? @post.published_at -%>
+        today
+      <%- else -%>
+        on <%=h friendly_datetime @post.published_at %>
+      <%- end -%>
+    </strong>
   </p>
-<%- end -%>
+
+  <div class="clearfix">
+    <%= @post.summary %>
+  </div>
+
+  <p>
+    <%= link_to "View all posts from #{@post.news_feed.source}", :controller => :posts, :actions => :index, :source => @post.news_feed.source %>
+  </p>
+
+  <%- if admin? -%>
+    <p>
+      <%= link_to "Edit", edit_post_path(@post) %> |
+      <%= link_to "Destroy", @post, :confirm => 'Are you sure?', :method => :delete %> |
+      <%= link_to "View All", posts_path %>
+    </p>
+  <%- end -%>
+</div>
