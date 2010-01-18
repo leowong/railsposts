@@ -49,8 +49,10 @@ class PostsController < ApplicationController
   end
 
   def hit
-    @post = Post.find(params[:id])
-    @post.increase_points_by_one
+    if request.post?
+      @post = Post.find(params[:id])
+      @post.increase_points_by_one
+    end
     head :ok
   end
 end
