@@ -1,8 +1,12 @@
 ActionController::Routing::Routes.draw do |map|
-  map.hot "hot", :controller => 'posts', :action => 'hot'
-  map.resources :posts
+  map.hot 'hot', :controller => 'posts', :action => 'hot'
+  map.feeds 'feeds', :controller => 'news_feeds', :action => 'index'
+  map.login 'login', :controller => 'sessions', :action => 'new'
+  map.logout 'logout', :controller => 'sessions', :action => 'destroy'
 
+  map.resources :posts
   map.resources :news_feeds
+  map.resources :sessions
 
   # The priority is based upon order of creation: first created -> highest priority.
 

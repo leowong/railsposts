@@ -40,6 +40,9 @@
 	<div id="footer">
 	  <div class="tools">
     	    <%= link_to "Feeds", "/todo.html" %> | <%= link_to "Contact", "/todo.html" %>
+	    <%- if admin? -%>
+	      | <%= link_to "Logout", logout_path %>
+	    <%- end -%>
 	  </div>
 	</div>
       </div> <!-- container -->
