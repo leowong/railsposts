@@ -203,7 +203,7 @@ a:active {
 }
 
 .pagination .end {
-    font-size: smaller;
+    margin-left: 138px;
 }
 
 /* footer */
