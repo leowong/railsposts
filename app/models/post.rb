@@ -6,7 +6,8 @@ class Post < ActiveRecord::Base
 
   named_scope :hot,
               :joins => :news_feed,
-              :select => "posts.*, news_feeds.source as source", :conditions => ['weight >= ?', 0],
+              :select => "posts.*, news_feeds.source as source",
+              # :conditions => ['weight >= ?', 0],
               :order => "weight DESC, published_at DESC"
 
   def self.search(search, page)
@@ -21,6 +22,7 @@ class Post < ActiveRecord::Base
   def self.update_weight
     Post.all.each do |post|
       weight = ((post.points - 1) * 1024) / ((((Time.now - post.published_at)/3600) + 2) ** 1.5)
+      weight = -1 if weight < 0
       Post.update post.id, { :weight => weight }
     end
   end

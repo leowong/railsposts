@@ -82,6 +82,7 @@ a:active {
 
 #content #posts .post .datetime .result {
     color: #777777;
+    font-size: 10px;
 }
 
 #content #posts .post .main {
