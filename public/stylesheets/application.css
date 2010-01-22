@@ -165,10 +165,13 @@ a:active {
 #content table {
     width: auto;
     position: relative;
-    left: 100px;
+    left: 115px;
 }
 
-#content table tr th.number,
+#content table tr td.feed img {
+    vertical-align: text-bottom;
+}
+
 #content table tr td.number {
     text-align: right;
 }

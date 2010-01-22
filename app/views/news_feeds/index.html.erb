@@ -2,18 +2,14 @@
 
 
 <table>
-  <tr>
-    <th class="number">Posts</th>
-    <th>Name</th>
-    <th>Site</th>
-    <th>Feed</th>
-  </tr>
   <% for news_feed in @news_feeds %>
     <tr>
       <td class="number"><%= news_feed.posts.count %></td>
+      <td class="feed"><%= link_to image_tag("feed.png"), news_feed.url, :target => "_blank" %></td>
       <td><%= link_to news_feed.source, :controller => :posts, :action => :index, :source => news_feed.source %></td>
-      <td><%= link_to news_feed.homepage, news_feed.homepage, :target => "_blank" %></td>
-      <td><%= link_to news_feed.url, news_feed.url, :target => "_blank" %></td>
+      <td>
+	<%= link_to news_feed.homepage, news_feed.homepage, :target => "_blank" %>
+      </td>
       <% if admin? %>
         <td>
 	  <%= link_to "Show", news_feed %><br />
