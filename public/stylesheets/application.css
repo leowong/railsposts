@@ -115,10 +115,16 @@ a:active {
     float: left;
     font-size: 10px;
     width: 90px;
-    overflow: hidden;
-    white-space: nowrap;
+    /* overflow: hidden; */
+    /* white-space: nowrap; */
     text-align: right;
     margin-top: 2px;
+    position: relative;
+}
+
+#content #posts .post .source .arrow {
+    position: absolute;
+    right: -22px;
 }
 
 #content #posts .post span[class="source current"] a {
@@ -203,6 +209,7 @@ a:active {
 }
 
 .pagination .end {
+    font-size: smaller;
     margin-left: 138px;
 }
 

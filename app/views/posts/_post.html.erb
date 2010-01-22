@@ -30,6 +30,10 @@
           (<%= post.points %>)
 	</span>
       <%- end -%>
+    </span>
+
+    <span id="source-<%= post.id %>" class="source">
+      <%= link_to post.source || "unknown", :action => :index, :source => post.source %>
       <span id="arrow-<%= post.id %>" class="arrow" style="display:none">
 	<%= link_to image_tag("arrow.png"),
 	    post.url,
@@ -37,10 +41,6 @@
 	    :target => "_blank"
 	%>
       </span>
-    </span>
-
-    <span id="source-<%= post.id %>" class="source">
-      <%= link_to post.source || "unknown", :action => :index, :source => post.source %>
     </span>
 
   </div>
