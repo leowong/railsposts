@@ -162,6 +162,17 @@ a:active {
     margin: 0 0 15px 160px;
 }
 
+#content table {
+    width: auto;
+    position: relative;
+    left: 100px;
+}
+
+#content table tr th.number,
+#content table tr td.number {
+    text-align: right;
+}
+
 /* navigation bar */
 
 #navbar {

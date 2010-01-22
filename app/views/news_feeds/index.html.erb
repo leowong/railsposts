@@ -1,27 +1,30 @@
-<% title "feed listing (in alphabetical order)" %>
+<% title "feed listing (in alphabetical order by name)" %>
 
-<div id="page">
-  <table>
+
+<table>
+  <tr>
+    <th class="number">Posts</th>
+    <th>Name</th>
+    <th>Site</th>
+    <th>Feed</th>
+  </tr>
+  <% for news_feed in @news_feeds %>
     <tr>
-      <th class="name">Name</th>
-      <th>Site</th>
-      <th>Feed</th>
-    </tr>
-      <% for news_feed in @news_feeds %>
-        <tr>
-          <td class="name"><%=link_to news_feed.source, :controller => :posts, :action => :index, :source => news_feed.source %></td>
-          <td><%=link_to news_feed.homepage, news_feed.homepage, :target => "_blank" %></td>
-          <td><%=link_to news_feed.url, news_feed.url, :target => "_blank" %></td>
-          <% if admin? %>
-            <td><%= link_to "Show", news_feed %></td>
-            <td><%= link_to "Edit", edit_news_feed_path(news_feed) %></td>
-            <td><%= link_to "Destroy", news_feed, :confirm => 'Are you sure?', :method => :delete %></td>
-          <% end %>
-        </tr>
+      <td class="number"><%= news_feed.posts.count %></td>
+      <td><%= link_to news_feed.source, :controller => :posts, :action => :index, :source => news_feed.source %></td>
+      <td><%= link_to news_feed.homepage, news_feed.homepage, :target => "_blank" %></td>
+      <td><%= link_to news_feed.url, news_feed.url, :target => "_blank" %></td>
+      <% if admin? %>
+        <td>
+	  <%= link_to "Show", news_feed %><br />
+          <%= link_to "Edit", edit_news_feed_path(news_feed) %><br />
+          <%= link_to "Destroy", news_feed, :confirm => 'Are you sure?', :method => :delete %>
+	</td>
       <% end %>
-  </table>
-
-  <% if admin? %>
-    <p><%= link_to "New News Feed", new_news_feed_path %></p>
+    </tr>
   <% end %>
-</div>
+</table>
+
+<% if admin? %>
+ <p><%= link_to "New News Feed", new_news_feed_path %></p>
+<% end %>
