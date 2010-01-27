@@ -13,7 +13,11 @@
   </p>
 
   <div class="clearfix">
-    <%= @post.summary %>
+    <%- if @post.summary -%>
+      <%= @post.summary %>
+    <%- else -%>
+      <%= @post.content %>
+    <%- end -%>
   </div>
 
   <p>
